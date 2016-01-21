@@ -1,0 +1,17 @@
+style=attach
+add-brackets
+indent=force-tab
+attach-namespaces
+attach-classes
+attach-inlines
+attach-extern-c
+indent-switches
+break-blocks
+unpad-paren
+pad-oper
+pad-paren-in
+align-pointer=type
+align-reference=name
+mode=c
+lineend=linux
+
