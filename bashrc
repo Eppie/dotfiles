@@ -6,8 +6,6 @@ if [ -f /etc/bashrc ]; then
 fi
 
 export JAVA_HOME="/usr/java/latest"
-export DEVKITPPC="/home/aepstein/devkitPro/devkitPPC"
-export PATH=$PATH:/home/aepstein/devkitPro/devkitPPC/bin
 
 google () {
 	search=""
@@ -90,4 +88,3 @@ export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
 # Force prompt to write history after every command.
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-eval $(thefuck --alias)
