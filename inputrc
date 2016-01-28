@@ -1,5 +1,9 @@
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
+set echo-control-characters off
+
+"\e[A":history-search-backward
+"\e[B":history-search-forward
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
 "\e[5C": forward-word

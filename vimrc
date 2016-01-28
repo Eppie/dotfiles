@@ -11,7 +11,8 @@ Plug 'easymotion/vim-easymotion' " Move around more easily
 Plug 'airblade/vim-gitgutter' " Show git diff in gutter
 Plug 'StanAngeloff/php.vim' " PHP development tools
 Plug 'henrik/vim-indexed-search' " Match x of n
-Plug 'bling/vim-airline' " Fancy statusline
+Plug 'vim-airline/vim-airline' " Fancy statusline
+Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar' " Ctags sidebar, airline integration
 Plug 'terryma/vim-multiple-cursors' " Sublime-esque multiple cursors
 Plug 'Eppie/rainbow' " Rainbow-colored parentheses
@@ -19,6 +20,7 @@ Plug 'flazz/vim-colorschemes' " Many colorschemes
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' } " Tab completion
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 call plug#end()
 

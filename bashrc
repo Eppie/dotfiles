@@ -22,24 +22,21 @@ alias define='sdcv'
 alias d='define'
 alias xdg-open='gnome-open'
 
-TOKEN=at4jWDraNaTZzCF38T81CUDWmQDUBc
-USER_KEY=uom5JvaizujLSWQRDGsf6cx7QrpnoA
-
-
 function push {
-   lastCommand="$(history | tail -n1 | cut -d ' ' -f 6 | citu -d ';' -f 0)"
-   lastReturn=$?
-   if [ $lastReturn -eq 0  ]; then
-       title="Command Success"
-   else
-       title="Command Failure"
-   fi
-   curl -s -F "token=$TOKEN" \
-   -F "user=$USER_KEY" \
-   -F "title=$title" \
-   -F "message=$lastCommand on $(hostname)" https://api.pushover.net/1/messages.json
+	lastReturn=$?
+	lastCommand=$(history | tail -n1 | tr -s ' ' | cut -d ' ' -f 3- | sed "s/\"/'/g")
+	if [ $lastReturn -eq 0  ]; then
+		title="Success on $(hostname)"
+	else
+		title="Failure on $(hostname)"
+	fi
+	curl https://api.pushbullet.com/v2/pushes -X POST \
+		-u o.lSFrtwyYsNkkSp9Jm9M2MNpjj7e8AnnU: \ # my key
+		#-u o.aAUyKwy422h9Iy2PRWskAa31MwyjULdl: \ # shearforce's key
+		--header "Content-Type: application/json" \
+		--data-binary "{\"type\": \"note\", \"title\":\"$title\", \"body\": \"$lastCommand\"}" \
+		&> /dev/null
 }
-
 
 extract() {
 	local c e i
