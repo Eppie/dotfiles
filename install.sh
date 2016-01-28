@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=(vimrc bashrc astylerc inputrc toprc fzf.bash gitconfig)
+files=(vimrc bashrc astylerc inputrc toprc fzf.bash gitconfig sshrc)
 fileLocation=~/dotfiles
 
 for file in "${files[@]}"
