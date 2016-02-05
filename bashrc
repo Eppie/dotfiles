@@ -21,6 +21,18 @@ alias g='google'
 alias define='sdcv'
 alias d='define'
 alias xdg-open='gnome-open'
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -al'
+alias cd..='cd ..'
+alias mkdir='mkdir -pv'
+alias bc='bc -l'
+alias grep='grep --color=auto'
+alias vi='vim'
+alias gs='git status'
+alias gp='git pull'
+
+cls() { cd "$1"; ll; }
 
 function push {
 	lastReturn=$?
@@ -32,7 +44,6 @@ function push {
 	fi
 	curl https://api.pushbullet.com/v2/pushes -X POST \
 		-u o.lSFrtwyYsNkkSp9Jm9M2MNpjj7e8AnnU: \ # my key
-		#-u o.aAUyKwy422h9Iy2PRWskAa31MwyjULdl: \ # shearforce's key
 		--header "Content-Type: application/json" \
 		--data-binary "{\"type\": \"note\", \"title\":\"$title\", \"body\": \"$lastCommand\"}" \
 		&> /dev/null
