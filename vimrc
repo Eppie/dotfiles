@@ -43,9 +43,6 @@ if has("autocmd") " Remember cursor's last position when re-opening a file
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 set background=dark " Get the right colors
-set cinkeys=0{,0},0),0#,!<Tab>,;,:,o,O,e
-set indentkeys=!<Tab>,o,O
-map <Tab> i<Tab><Esc>^
 
 " ===== YouCompleteMe =====
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
