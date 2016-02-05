@@ -1,6 +1,8 @@
+[color]
+	ui = auto
 [user]
-name = Andrew Epstein
-email = aepstein@sevone.com
+	name = Andrew Epstein
+	email = aepstein@sevone.com
 [push]
 	default = simple
 [alias]
@@ -8,3 +10,7 @@ email = aepstein@sevone.com
 	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lg = !"git lg1"
 	graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+	st = status
+	br = branch -v
+[core]
+	editor = vi
