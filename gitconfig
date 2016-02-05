@@ -13,4 +13,4 @@
 	st = status
 	br = branch -v
 [core]
-	editor = vi
+	editor = vim
