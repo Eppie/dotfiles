@@ -33,6 +33,7 @@ alias gs='git status'
 alias gp='git pull'
 
 cls() { cd "$1"; ll; }
+chx() { chmod 744 "$1"; }
 
 function push {
 	lastReturn=$?
