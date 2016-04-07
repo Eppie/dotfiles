@@ -5,8 +5,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-export JAVA_HOME="/usr/java/latest"
-
 google () {
 	search=""
 	echo "Googling: $@"
@@ -31,8 +29,10 @@ alias grep='grep --color=auto'
 alias vi='vim'
 alias gs='git status'
 alias gp='git pull'
+alias ducks='du -cksh'
 
 cls() { cd "$1"; ll; }
+chx() { chmod 744 "$1"; }
 
 function push {
 	lastReturn=$?

@@ -2,7 +2,7 @@
 	ui = auto
 [user]
 	name = Andrew Epstein
-	email = aepstein@sevone.com
+	email = aepstein@udel.edu
 [push]
 	default = simple
 [alias]
@@ -14,3 +14,7 @@
 	br = branch -v
 [core]
 	editor = vim
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

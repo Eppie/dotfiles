@@ -21,6 +21,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' } " Tab 
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -55,7 +56,7 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#syntastic#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -72,7 +73,7 @@ let b:syntastic_mode = 'passive'
 
 " Syntastic C++ options:
 let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_cpp_compiler_options = ' -std=c++14'
 
 " Syntastic Python options:
 let g:syntastic_python_python_exec = '/usr/bin/python'
@@ -120,25 +121,28 @@ set tags=./tags;
 " Ctrl+l: clear highlighting
 nnoremap <silent> <C-l> :noh<return><C-l>
 
+" F4: run astyle on current buffer
+map <F4> :%!astyle<CR>
+
 " F5: apply YouCompleteMe autofix
 map <F5> :YcmCompleter FixIt<CR>
 
 " F6: clear Syntastic warning messages
-map <F6> :SyntasticReset<return>
+map <F6> :SyntasticReset<CR>
 
 " F7: toggle display of tabs/spaces/etc
-nmap <F7> :set list!<return>
+nmap <F7> :set list!<CR>
 
 " F8: toggle the ctags sidebar
 nmap <F8> :TagbarToggle<CR>
 
 " Alt+→: next buffer
-map [1;3C <Esc>:bn!<return>
-map! [1;3C <Esc>:bn!<return>
+map [1;3C <Esc>:bn!<CR>
+map! [1;3C <Esc>:bn!<CR>
 
 " Alt+← previous buffer
-map [1;3D <Esc>:bp!<return>
-map! [1;3D <Esc>:bp!<return>
+map [1;3D <Esc>:bp!<CR>
+map! [1;3D <Esc>:bp!<CR>
 
 " \1, \2, etc to go to numbered buffer.
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -162,3 +166,4 @@ augroup phpSyntaxOverride
 	autocmd!
 	autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
